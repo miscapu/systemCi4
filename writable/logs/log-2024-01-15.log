@@ -1,0 +1,12 @@
+CRITICAL - 2024-01-15 20:49:47 --> Allowed fields must be specified for model: "App\Models\UserModel"
+in SYSTEMPATH/Model.php on line 736.
+ 1 SYSTEMPATH/Model.php(736): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\UserModel')
+ 2 SYSTEMPATH/BaseModel.php(763): CodeIgniter\Model->doProtectFieldsForInsert([...])
+ 3 SYSTEMPATH/Model.php(715): CodeIgniter\BaseModel->insert([...], false)
+ 4 SYSTEMPATH/BaseModel.php(698): CodeIgniter\Model->insert([...], false)
+ 5 APPPATH/Controllers/UserController.php(90): CodeIgniter\BaseModel->save([...])
+ 6 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\UserController->register()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-01-15 20:50:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

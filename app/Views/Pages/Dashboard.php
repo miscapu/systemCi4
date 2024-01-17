@@ -24,29 +24,29 @@ $this->section( 'content' );
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Updated At</th>
+
         </tr>
         </thead>
         <tbody>
+        <?php if( isset( $users ))
+        foreach ( $users as $user ):
+        ?>
         <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row"><?= $user->id; ?></th>
+            <td><?= $user->firstname; ?></td>
+            <td><?= $user->lastname; ?></td>
+            <td><?= $user->email; ?></td>
+            <td><?= $user->created_at; ?></td>
+            <td><?= $user->updated_at; ?></td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-        </tr>
+        <?php
+            endforeach;
+            ?>
         </tbody>
     </table>
 

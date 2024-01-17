@@ -3,13 +3,24 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\UserModel;
 
 class Dashboard extends BaseController
 {
+    public $userModel;
+
+    public function __construct()
+    {
+        $this->userModel    =   new UserModel();
+    }
+
     public function index()
     {
+        $users  =   $this->userModel->asObject()->findAll();
+
         $data   =   [
-            'title' =>  'Dashboard'
+            'title' =>  'Dashboard',
+            'users' =>  $users
         ];
 
         $renderT    =   \Config\Services::renderer();

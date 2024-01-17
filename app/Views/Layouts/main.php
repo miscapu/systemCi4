@@ -22,9 +22,15 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="<?= site_url( '/' );?>">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= site_url( '/register' );?>">Register User</a>
-                </li>
+                <?php
+                if ( !session()->get( 'isLoggedIn' ) ):
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= site_url( '/register' );?>">Register User</a>
+                    </li>
+                <?php
+                endif;
+                ?>
 <!--                <li class="nav-item dropdown">-->
 <!--                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
 <!--                        Dropdown-->
@@ -40,11 +46,17 @@
 <!--                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>-->
 <!--                </li>-->
             </ul>
-            <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= site_url( '/logout' );?>">Logout</a>
-                </li>
-            </ul>
+            <?php
+            if ( session()->get( 'isLoggedIn' ) ):
+                ?>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= site_url( '/logout' );?>">Logout</a>
+                    </li>
+                </ul>
+            <?php
+            endif;
+            ?>
         </div>
     </div>
 </nav>

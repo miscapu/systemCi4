@@ -18,37 +18,47 @@ $this->section( 'content' );
             endif;
         ?>
         <h5 class="bg-info-subtle">Hello, <?= $firstname . " " . $lastname;  ?></h5>
+
+
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Created At</th>
+                        <th scope="col">Updated At</th>
+                        <th scope="col">Actions</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php if( isset( $users ))
+                        foreach ( $users as $user ):
+                            ?>
+                            <tr>
+                                <th scope="row"><?= $user->id; ?></th>
+                                <td><?= $user->firstname; ?></td>
+                                <td><?= $user->lastname; ?></td>
+                                <td><?= $user->email; ?></td>
+                                <td><?= $user->created_at; ?></td>
+                                <td><?= $user->updated_at; ?></td>
+                                <td>
+                                    <a href="" class="btn btn-sm btn-primary fa fa-edit d-inline">Edit</a>
+                                    <a href="" class="btn btn-sm btn-danger fa fa-trash d-inline">Delete</a>
+                                </td>
+
+                            </tr>
+                        <?php
+                        endforeach;
+                    ?>
+                    </tbody>
+                </table>
+
     </div>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Created At</th>
-            <th scope="col">Updated At</th>
 
-        </tr>
-        </thead>
-        <tbody>
-        <?php if( isset( $users ))
-        foreach ( $users as $user ):
-        ?>
-        <tr>
-            <th scope="row"><?= $user->id; ?></th>
-            <td><?= $user->firstname; ?></td>
-            <td><?= $user->lastname; ?></td>
-            <td><?= $user->email; ?></td>
-            <td><?= $user->created_at; ?></td>
-            <td><?= $user->updated_at; ?></td>
-        </tr>
-        <?php
-            endforeach;
-            ?>
-        </tbody>
-    </table>
 
 <?php
 $this->endSection();

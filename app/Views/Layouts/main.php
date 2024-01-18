@@ -63,17 +63,7 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-
-        </div>
-        <div class="col">
-            <?= $this->renderSection( 'content' );?>
-        </div>
-        <div class="col">
-
-        </div>
-    </div>
+    <?= $this->renderSection( 'content' );?>
 </div>
 
 </body>

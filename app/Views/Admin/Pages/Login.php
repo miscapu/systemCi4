@@ -1,5 +1,5 @@
 <?=
-$this->extend( 'Layouts/main' );
+$this->extend( 'Admin/Layouts/main' );
 
 $this->section( 'content' );
 

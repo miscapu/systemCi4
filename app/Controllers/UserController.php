@@ -69,7 +69,7 @@ class UserController extends BaseController
         }
 
         $renderT    =   \Config\Services::renderer();
-        return $renderT->setData( $data )->render( 'Pages/Login' );
+        return $renderT->setData( $data )->render( 'Admin/Pages/Login' );
     }
 
     /**
@@ -163,7 +163,7 @@ class UserController extends BaseController
         }
 
         $renderT    =   \Config\Services::renderer();
-        return $renderT->setData( $data )->render( 'Pages/Register' );
+        return $renderT->setData( $data )->render( 'Admin/Pages/Form' );
     }
 
     /**

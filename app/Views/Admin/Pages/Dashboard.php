@@ -1,5 +1,5 @@
 <?=
-$this->extend( 'Layouts/main' );
+$this->extend( 'Admin/Layouts/main' );
 
 $this->section( 'content' );
 
@@ -45,7 +45,7 @@ $this->section( 'content' );
                                 <td><?= $user->created_at; ?></td>
                                 <td><?= $user->updated_at; ?></td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-primary fa fa-edit d-inline">Edit</a>
+                                    <a href="<?= site_url( '/edituser/'.$user->id.'' )?>" class="btn btn-sm btn-primary fa fa-edit d-inline">Edit</a>
                                     <a href="" class="btn btn-sm btn-danger fa fa-trash d-inline">Delete</a>
                                 </td>
 

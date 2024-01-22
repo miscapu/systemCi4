@@ -24,6 +24,40 @@ class Dashboard extends BaseController
         ];
 
         $renderT    =   \Config\Services::renderer();
-        return $renderT->setData( $data )->render( 'Pages/Dashboard' );
+        return $renderT->setData( $data )->render( 'Admin/Pages/Dashboard' );
+    }
+
+    /**
+     * @param $id
+     * @return string
+     */
+    public function edit( $id )
+    {
+        helper( [ 'form' ] );
+
+        $user =   $this->userModel->asObject()->find( $id );
+
+
+
+        $data   =   [
+            'title'     =>  'Edit User',
+            'user'    =>  $user
+        ];
+
+        if ( $this->request->getMethod() == 'post' ){
+            $userData   =   [
+                'firstname'     =>  $this->request->getVar( 'firstnameFrm' ),
+                'lastname'      =>  $this->request->getVar( 'lastnameFrm' ),
+                'email'         =>  $this->request->getVar( 'emailFrm' )
+            ];
+
+            $this->userModel->update( $id, $userData );
+
+            return redirect()->to( '/' );
+        }
+
+        $renderT    =   \Config\Services::renderer();
+
+        return $renderT->setData( $data )->render( 'Admin/Pages/Form' );
     }
 }

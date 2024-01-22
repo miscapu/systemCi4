@@ -46,7 +46,7 @@ $this->section( 'content' );
                                 <td><?= $user->updated_at; ?></td>
                                 <td>
                                     <a href="<?= site_url( '/edituser/'.$user->id.'' )?>" class="btn btn-sm btn-primary fa fa-edit d-inline">Edit</a>
-                                    <a href="" class="btn btn-sm btn-danger fa fa-trash d-inline">Delete</a>
+                                    <a href="<?= site_url( '/delete/'.$user->id.'' )?>" class="btn btn-sm btn-danger fa fa-trash d-inline">Delete</a>
                                 </td>
 
                             </tr>

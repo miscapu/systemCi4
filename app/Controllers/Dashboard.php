@@ -58,4 +58,12 @@ class Dashboard extends BaseController
 
         return $renderT->setData( $data )->render( 'Admin/Pages/Form' );
     }
+
+
+    public function delete( $id )
+    {
+        $this->userModel->where( 'id', $id );
+        $this->userModel->delete();
+        return redirect()->to( '/' );
+    }
 }

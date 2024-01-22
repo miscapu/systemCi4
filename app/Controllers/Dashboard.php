@@ -37,8 +37,6 @@ class Dashboard extends BaseController
 
         $user =   $this->userModel->asObject()->find( $id );
 
-
-
         $data   =   [
             'title'     =>  'Edit User',
             'user'    =>  $user
